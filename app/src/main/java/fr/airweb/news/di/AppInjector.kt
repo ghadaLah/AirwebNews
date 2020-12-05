@@ -15,7 +15,6 @@ object AppInjector {
 
         application.registerActivityLifecycleCallbacks(object: Application.ActivityLifecycleCallbacks {
             override fun onActivityPaused(activity: Activity) {
-                AndroidInjection.inject(activity)
             }
 
             override fun onActivityStarted(p0: Activity) { }
@@ -26,7 +25,9 @@ object AppInjector {
 
             override fun onActivityStopped(p0: Activity) {}
 
-            override fun onActivityCreated(p0: Activity, p1: Bundle?) {}
+            override fun onActivityCreated(activity: Activity, p1: Bundle?) {
+                AndroidInjection.inject(activity)
+            }
 
             override fun onActivityResumed(p0: Activity) {}
 
