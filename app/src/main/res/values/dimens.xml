@@ -2,4 +2,9 @@
 <resources>
     <dimen name="margin_15">15dp</dimen>
     <dimen name="margin_5">5dp</dimen>
+    <array name="auro_sized_text_sized">
+        <item>12sp</item>
+        <item>14sp</item>
+        <item>16sp</item>
+    </array>
 </resources>

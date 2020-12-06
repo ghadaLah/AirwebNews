@@ -23,6 +23,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="Title"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="22sp"
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
             app:layout_constraintTop_toBottomOf="@id/newsImg"/>
 
@@ -33,6 +38,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Subtitle"
             app:layout_constraintTop_toBottomOf="@id/newsTitle"
             android:layout_marginTop="@dimen/margin_5"
+            android:maxLines="3"
+            android:ellipsize="end"
             tools:text="content"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
