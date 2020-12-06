@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     fun buildListeners() {
         viewModel.newsList.observe(this, Observer {
-            viewModel.adapter.addAllNews(it.news)
+            viewModel.adapter.addAllNews(it)
         })
 
         viewModel.error.observe(this, Observer {
