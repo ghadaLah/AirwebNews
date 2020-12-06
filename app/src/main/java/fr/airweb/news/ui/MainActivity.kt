@@ -14,10 +14,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
 
-    private val viewModel: NewsListViewModel by lazy { ViewModelProviders.of(this, viewModelFactory)[NewsListViewModel::class.java] }
+    private val viewModel: NewsListViewModel by lazy { ViewModelProviders.of(this, ViewModelFactory(this))[NewsListViewModel::class.java] }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
