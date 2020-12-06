@@ -1,12 +1,13 @@
-package fr.airweb.news.di
+package fr.airweb.news.base
 
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
+import fr.airweb.news.di.ApplicationModule
+import fr.airweb.news.di.DaggerAppComponent
 import fr.airweb.news.ui.NewsListViewModel
 
 abstract class BaseViewModel: ViewModel() {
-    val injector = DaggerAppComponent
-        .builder()
+    val injector = DaggerAppComponent.builder()
         .application(ApplicationModule)
         .Build()
 

@@ -2,8 +2,7 @@ package fr.airweb.news.ui
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import fr.airweb.news.di.BaseViewModel
+import fr.airweb.news.base.BaseViewModel
 import fr.airweb.news.model.NewsModel
 import fr.airweb.news.network.NewsService
 import io.reactivex.android.schedulers.AndroidSchedulers
