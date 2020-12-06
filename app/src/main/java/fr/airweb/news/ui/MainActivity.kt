@@ -6,8 +6,11 @@ import android.util.Log
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import fr.airweb.news.R
 import fr.airweb.news.base.ViewModelFactory
+import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
@@ -21,17 +24,21 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        viewModel = ViewModelProviders.of(this, viewModelFactory)[NewsListViewModel::class.java]
+        toolbar.title = "Airweb news"
         buildListeners()
+        setUpadapter()
     }
 
-    override fun onResume() {
-        super.onResume()
-
+    fun setUpadapter() {
+        val layoutmanager = LinearLayoutManager(this)
+        layoutmanager.orientation = LinearLayoutManager.VERTICAL
+        newsList.layoutManager = layoutmanager
+        newsList.adapter = viewModel.adapter
     }
 
     fun buildListeners() {
         viewModel.newsList.observe(this, Observer {
-            Log.d("airwebNews", "irwebNews got ok activity result $it")
+            viewModel.adapter.addAllNews(it.news)
         })
 
         viewModel.error.observe(this, Observer {

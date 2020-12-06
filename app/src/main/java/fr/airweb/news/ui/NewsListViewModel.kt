@@ -9,7 +9,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
-class NewsListViewModel @Inject constructor(var newsService: NewsService): ViewModel() {
+class NewsListViewModel @Inject constructor(val newsService: NewsService, val adapter: NewsListAdapter): ViewModel() {
 
 
     var newsList = MutableLiveData<NewsModel>()
