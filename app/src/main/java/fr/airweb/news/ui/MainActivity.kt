@@ -24,7 +24,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 //        viewModel = ViewModelProviders.of(this, viewModelFactory)[NewsListViewModel::class.java]
-        toolbar.title = "Airweb news"
+        collapsingToolbar.isTitleEnabled = false
+        toolbar.title = "Airweb News"
+
         buildListeners()
         setUpadapter()
     }
